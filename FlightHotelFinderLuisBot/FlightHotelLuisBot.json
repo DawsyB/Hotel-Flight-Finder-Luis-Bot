@@ -1,0 +1,245 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "FlightHotelLuisBot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "FlightDestination"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "HotelDestination"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "SearchFlights"
+    },
+    {
+      "name": "SearchHotels"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Hotel"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "geography"
+  ],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "home",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "howdy",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i want to go to sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "i have a problem",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "this is not what i want",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "take me back",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "fly to sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "fly me to sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "i want to fly to sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "list of hotels",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "hotels in sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "show me some flights",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "where can i stay in sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "can't understand",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "list of flights available",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "need to fly urgently",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "any flights available?",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "searching for flights",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "looking for flights for sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "please show me flights for sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "flights for sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "flight for sydney tomorrow",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "want to fly to sydney",
+      "intent": "FlightDestination",
+      "entities": []
+    },
+    {
+      "text": "show me list of flights",
+      "intent": "SearchFlights",
+      "entities": []
+    },
+    {
+      "text": "searching for good hotels",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "best hotels around the world",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "find hotels around me",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "show hotel around me",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "cheap hotels around",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "new hotels in town",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "find hotels around sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "find hotel near sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "cheap hotel in sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "top hotel in sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "best hotel in sydney",
+      "intent": "HotelDestination",
+      "entities": []
+    },
+    {
+      "text": "change of mind",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i am looking for something else",
+      "intent": "Help",
+      "entities": []
+    }
+  ]
+}
