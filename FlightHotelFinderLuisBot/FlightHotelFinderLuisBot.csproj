@@ -116,6 +116,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\FlightLuisDialog.cs" />
+    <Compile Include="Dialogs\HelpDialog.cs" />
     <Compile Include="Dialogs\HotelLuisDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Global.asax.cs">
@@ -123,6 +124,7 @@
     </Compile>
     <Compile Include="Models\Flight\Flights.cs" />
     <Compile Include="Models\Flight\FlightsQuery.cs" />
+    <Compile Include="Models\Help\HelpQuery.cs" />
     <Compile Include="Models\Hotel\Hotel.cs" />
     <Compile Include="Models\Hotel\HotelQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

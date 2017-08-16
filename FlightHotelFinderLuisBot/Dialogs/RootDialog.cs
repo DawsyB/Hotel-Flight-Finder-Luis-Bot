@@ -12,7 +12,8 @@ namespace FlightHotelFinderLuisBot.Dialogs
     {
         private const string FlightOption = "Flights";
         private const string HotelOption = "Hotels";
-        private const string TrainOrBusOption = "Train or Bus";
+        private const string TrainOption = "Train";
+        private const string BusOption = "Bus";
         private const string HelpOption = "Help/Support";
         public async Task StartAsync(IDialogContext context)
         {
@@ -25,8 +26,30 @@ namespace FlightHotelFinderLuisBot.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
             var message = await result;
+            var userName = string.Empty;
+            var getName = false;
+            context.UserData.TryGetValue<bool>("GetName", out getName);
+            context.UserData.TryGetValue<string>("Name", out userName);
 
-            this.ShowOptions(context);
+            if (getName)
+            {
+                userName = message.Text;
+                context.UserData.SetValue<string>("Name", userName);
+                context.UserData.SetValue<bool>("GetName", false);
+                await context.PostAsync("Thanks");
+            }
+            if (string.IsNullOrEmpty(userName))
+            {
+                await context.PostAsync("May I please have your name?");                
+                context.UserData.SetValue<bool>("GetName", true);
+                
+            }
+            else
+            {
+                this.ShowOptions(context);
+
+            }
+            
 
 
 
@@ -34,7 +57,7 @@ namespace FlightHotelFinderLuisBot.Dialogs
 
         private void ShowOptions(IDialogContext context)
         {
-            PromptDialog.Choice(context, this.OnOptionsSelected, new List<string>() { FlightOption, HotelOption, TrainOrBusOption, HelpOption }, "Are you looking for ...", "Not a Valid Option", 3);
+            PromptDialog.Choice(context, this.OnOptionsSelected, new List<string>() { FlightOption, HotelOption, TrainOption,BusOption, HelpOption }, $"Hi {context.UserData.GetValue<string>("Name")}, are you looking for ...", "Not a Valid Option", 3);
         }
 
         private async Task OnOptionsSelected(IDialogContext context, IAwaitable<string> result)
@@ -50,13 +73,17 @@ namespace FlightHotelFinderLuisBot.Dialogs
                     await context.PostAsync($"Welcome to the Hotels finder! What are you looking for?");
                     context.Call(new HotelLuisDialog(), this.ResumeAfterOptionDialog);
                     break;
-                case TrainOrBusOption:
-                    await context.PostAsync("Bus and Train finder coming soon!!!");
+                case TrainOption:
+                    await context.PostAsync("Train finder coming soon!!!");
+                    this.ShowOptions(context);
+                    break;
+                case BusOption:
+                    await context.PostAsync("Bus finder coming soon!!!");
                     this.ShowOptions(context);
                     break;
                 case HelpOption:
-                    await context.PostAsync("No help or support available at this time");
-                    this.ShowOptions(context);
+                    context.Call(new HelpDialog(), this.ResumeAfterOptionDialog);
+                    await context.PostAsync("Thanks for contacting support!");                    
                     break;
             }
         }
